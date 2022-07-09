@@ -1,0 +1,134 @@
+#{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #495C83;
+  background-image: linear-gradient(#495C83,#C8B6E2);
+}
+hr
+{
+  background-image: linear-gradient(#495C83,#C8B6E2);
+  border-color:white;
+  border-width: thick 10px;
+  border-style:dotted none none;<!-- to implement dotted  border, none none to only get the top border-->
+  border-height:1px;
+  width: 12%;<!-- by this the width will adjust itself even if the website is open on mobile or laptop-->
+
+}
+html{
+  height: 100%;
+}
+
+h1{
+  color:#B7D3DF;
+  font-family:Marker Felt,fantasy;
+  font-size: 100px;
+  text-align: center;
+  width: 800px;
+}
+h3{
+  color:#F15412;
+}
+
+h5{
+  color:#F5F0BB;
+}
+a{
+  color:#F5F0BB;
+  text-decoration: none;
+}
+.link{
+  color:#73A9AD;
+}
+.name{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #495C83; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    nameanimation 2s 2  ,
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end 5 forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 800px;}
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  25%{
+    border-color:#F5F0BB;
+  }
+  50% { border-color:#B7D3DF; }
+  75%{
+    border-color:#F5F0BB;
+  }
+}
+
+@keyframes nameanimation {
+  0%{
+    color: #F5F0BB;
+
+  }
+
+  50%{
+    color: #73A9AD;
+  }
+  100%{
+    color: #F5F0BB;
+  }
+
+
+}
+
+.card-container{
+  width: 100%;
+  height: 600px;
+  display: flex;<!-- used to aligh the cards-->
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card{
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: width 500ms, height 500ms;
+}
+
+.card img{
+  width: 100%;
+  height: 100%;
+  transition: width 600ms, height 600ms, background 600ms, border 600ms;
+}
+
+.card:hover{
+  width: 320px;
+  height: 320px;
+}
+
+.card:hover img{
+  width: 105%;
+  height: 105%;
+}
+@media (max-width:850px)
+ {
+   .card{
+     margin-bottom: 10px;
+   }
+   .card-container
+   {
+     flex-direction: column;
+   }
+
+}
